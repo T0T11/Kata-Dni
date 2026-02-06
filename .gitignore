@@ -1,1 +1,16 @@
-.venv
+# VSCode
+.vscode
+.cache
+
+# Python
+venv/
+__pycache__
+
+# Pytest
+.pytest_cache
+
+# MacOS
+.DS_Store
+
+# COVERAGE
+.coverage
