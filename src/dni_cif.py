@@ -4,19 +4,19 @@ class Dni:
         self.numeroSano = None
         self.letraSana = None
 
-    def getDni(self):
+    def getDni(self): #
         return self.dni
     
-    def setDni(self, dni):
+    def setDni(self, dni): #
         self.dni = dni
 
-    def getNumeroSano(self):
+    def getNumeroSano(self): #
         return self.numeroSano
     
-    def getLetraSana(self):
+    def getLetraSana(self): #
         return self.letraSana
     
-    def checkCIF(self):
+    def checkCIF(self): #
         if not self.dni or len(self.dni) < 2:
             return False
         
@@ -26,32 +26,32 @@ class Dni:
             return False
         return True 
 
-    def checkDni(self): 
+    def checkDni(self): #
         if len(self.dni) != 9:
             return False
         numero = self.dni[:-1]
         letra = self.dni[-1]
-        if not numero.isdigit():
+        if not numero.isdigit(): #
             return False
         self.numeroSano = int(numero)
         self.letraSana = "TRWAGMYFPDXBNJZSQVHLCKE"[self.numeroSano % 23]
         return True
     
-    def checkLetra(self):
-        if not hasattr(self, "letraSana"):
+    def checkLetra(self): #
+        if not hasattr(self, "letraSana"): #
             return False
         return self.letraSana == self.dni[-1]
     
-    def obtenerLetra(self):
-        if not hasattr(self, "letraSana"):
+    def obtenerLetra(self): #
+        if not hasattr(self, "letraSana"): #
             return None
         return self.letraSana
     
-    def getParteAlfabeticaDni(self):
+    def getParteAlfabeticaDni(self): #
         return self.dni[-1]
     
-    def getParteNumericaDni(self):
-        if not getattr(self, "numeroSano", False):
+    def getParteNumericaDni(self): #
+        if not getattr(self, "numeroSano", False): #
             return ""
         return self.dni[:-1]
     
