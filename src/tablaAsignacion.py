@@ -1,6 +1,7 @@
 class TablaAsignacion:
-    def getTabla(self): #
-        return [
+
+    def __init__(self): #
+        self.tabla = [
             "T",
             "R",
             "W",
@@ -26,6 +27,9 @@ class TablaAsignacion:
             "E",
         ]
     
+    def getTabla(self): #
+        return self.tabla
+    
     def getLetra(self, posicion): #
         tabla = self.getTabla()
         if 0 <= posicion < len(tabla):
@@ -43,3 +47,6 @@ class TablaAsignacion:
         modulo = self.getModulo()
         posicion = int(numero_dni) % modulo
         return self.getLetra(posicion)
+    
+    def __repr__(self) -> str:
+        return ' '.join(self.getTabla())

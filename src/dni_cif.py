@@ -47,12 +47,10 @@ class Dni:
             return None
         return self.letraSana
     
-    def getParteAlfabeticaDni(self): #
+    def getParteAlfabeticaDni(self):
         return self.dni[-1]
     
     def getParteNumericaDni(self): #
         if not getattr(self, "numeroSano", False): #
             return ""
         return self.dni[:-1]
-    
-
